@@ -1,0 +1,17 @@
+@baseUrl = http://127.0.0.1:3000
+
+POST {{baseUrl}}/s3/picture
+Content-Type: multipart/form-data; boundary=ImageBoundary
+
+--ImageBoundary
+Content-Disposition: form-data; name="image"; filename="IMG_20230506_091726.jpg"
+Content-Type: image/png
+
+< ./IMG_20230506_091726.jpg
+--ImageBoundary--
+#########
+
+DELETE {{baseUrl}}/s3/picture/d-1.jpg
+
+#########
+GET {{baseUrl}}/s3/picture/index.jpg
